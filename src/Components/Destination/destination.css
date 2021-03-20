@@ -1,0 +1,23 @@
+.search-aria{
+
+}
+.destination-form{
+    margin: 30px 50px;
+}
+.destination-form input{
+    display: block;
+    margin-top: 30px;
+    padding:5px;
+    border:1px solid gray;
+    border-radius: 5px;
+    width:300px;
+}
+.location{
+    border: 1px solid red;
+    width: 200px;
+    padding: 5px 30px;
+    background-color: orangered;
+    color:white;
+    font-weight: bold;
+    border-radius: 20px;
+}
