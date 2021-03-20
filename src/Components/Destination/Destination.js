@@ -9,13 +9,13 @@ import "./destination.css"
 const Destination = () => {
     const [toggle, setToggle] = useState(true);
     const [destionation, setDestination] = useState({});
-    const {transportKey} = useParams();
+    const { transportKey } = useParams();
 
 
 
 
     const handleOnBlur = (e) => {
-        let newDestination = {...destionation};
+        let newDestination = { ...destionation };
         newDestination[e.target.name] = e.target.value;
         setDestination(newDestination);
 
@@ -24,7 +24,7 @@ const Destination = () => {
     return (
         <div className="d-flex container">
             <div className="search-aria bg-light">
-<h1>{transportKey}</h1>
+                <h1>{transportKey}</h1>
 
                 {
                     toggle ? <Form >

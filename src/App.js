@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Header from './Components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home/Home';
 import {
@@ -33,9 +32,7 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          {/* <Route path="/product/:productKey">
-            <ProductDetails></ProductDetails>
-          </Route> */}
+        
           <Route path="/transport/:transportKey">
           <Destination></Destination>
           </Route>
