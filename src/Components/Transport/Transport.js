@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import "./transport.css"
 
 
 const Transport = (props) => {
@@ -11,8 +12,8 @@ const Transport = (props) => {
     return (
         <div >
             <Link to={"/transport/" + id}>
-                <Card className="card-container" style={{ width: '15rem', margin: '10px', height: "200px" }}>
-                    <Card.Img variant="top" style={{ width: "200px", hight: "200px" }} src={img} />
+                <Card className="card-container">
+                    <Card.Img variant="top" src={img} />
                     <Card.Body>
                         <h5 variant="primary">{name}</h5>
                     </Card.Body>
