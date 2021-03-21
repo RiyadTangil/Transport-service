@@ -52,6 +52,8 @@ const Destination = () => {
                                         <Form.Label>Pick to</Form.Label>
                                         <Form.Control type="text" name="to" onBlur={handleOnBlur} placeholder="to" />
                                     </Form.Group>
+                                    <input type="date" name="" id=""/><br/><br/>
+
                                     <Button onClick={handleSearch} type="submit" variant="primary" > Search </Button>
                                 </Form>
                             </div> :

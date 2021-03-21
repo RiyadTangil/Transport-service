@@ -11,10 +11,10 @@ const Transport = (props) => {
     return (
         <div >
             <Link to={"/transport/" + id}>
-                <Card className="card-container" style={{ width: '15rem', margin: '10px', height: "250px" }}>
+                <Card className="card-container" style={{ width: '15rem', margin: '10px', height: "200px" }}>
                     <Card.Img variant="top" style={{ width: "200px", hight: "200px" }} src={img} />
                     <Card.Body>
-                        <h3 variant="primary">{name}</h3>
+                        <h5 variant="primary">{name}</h5>
                     </Card.Body>
                 </Card>
 
