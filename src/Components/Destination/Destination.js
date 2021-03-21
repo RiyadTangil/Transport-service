@@ -13,7 +13,7 @@ const Destination = () => {
     const [toggle, setToggle] = useState(true);
     const [destionation, setDestination] = useState({});
     const { transportKey } = useParams();
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
 
 
     const transport = Fakedata.find(rider => rider.id == transportKey);
