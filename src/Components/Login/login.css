@@ -1,3 +1,7 @@
+body{
+    background-color: aqua;
+}
+
 .login-form{
     margin: 30px 100px;
 
@@ -9,13 +13,14 @@
    background-color: rgb(233, 233, 233);
    padding-bottom: 5px;
 }
-.login-form input{
+.login-form input {
     display: inline-block;
     margin-top: 30px;
     padding:5px;
     border:1px solid gray;
     border-radius: 5px;
     width:300px;
+    background-color:rgb(216, 208, 208);
 }
 .error{
     color:red;
