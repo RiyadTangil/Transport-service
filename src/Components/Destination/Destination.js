@@ -16,7 +16,7 @@ const Destination = () => {
     const [loggedInUser] = useContext(UserContext)
 
 
-    const transport = Fakedata.find(rider => rider.id === transportKey);
+    const transport = Fakedata.find(rider => rider.id == transportKey);
     const handleSearch = () => {
         setToggle(!toggle);
     }
