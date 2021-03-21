@@ -1,16 +1,25 @@
 
-import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
+import React, { useContext, useState } from 'react';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import "./destination.css"
+import "./destination.css";
+import Fakedata from '../FakeData/Fakedata.json'
+import Header from '../Header/Header';
+import { UserContext } from '../../App';
+import GoogleMap from './GoogleMap';
 
 
 const Destination = () => {
     const [toggle, setToggle] = useState(true);
     const [destionation, setDestination] = useState({});
     const { transportKey } = useParams();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
+
+    const transport = Fakedata.find(rider => rider.id == transportKey);
+    const handleSearch = () => {
+        setToggle(!toggle);
+    }
 
 
 
@@ -19,49 +28,74 @@ const Destination = () => {
         newDestination[e.target.name] = e.target.value;
         setDestination(newDestination);
 
-        console.log(newDestination);
     }
     return (
-        <div className="d-flex container">
-            <div className="search-aria bg-light">
-                <h1>{transportKey}</h1>
 
-                {
-                    toggle ? <Form >
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Pick from</Form.Label>
-                            <Form.Control type="text" name="from" onBlur={handleOnBlur} placeholder="from" />
+        <div >
+            <Header>
+                <h5>{loggedInUser.name}</h5>
+            </Header>
+            <Row >
+                <Col style={{ display: 'flex', alignItems: 'center', justifyContent: "center" }} lg={6} md={12}>
+                    <div className="search-aria">
 
-                        </Form.Group>
+                        {
+                            toggle ? <div className="form-section">
+                                <Form >
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Label>Pick from</Form.Label>
+                                        <Form.Control type="text" name="from" onBlur={handleOnBlur} placeholder="from" />
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Pick to</Form.Label>
-                            <Form.Control type="text" name="to" onBlur={handleOnBlur} placeholder="to" />
-                        </Form.Group>
-                        <Button onClick={() => setToggle(!toggle)} type="submit" variant="primary" > Search </Button>
-                    </Form> :
-                        <div>
-                            <div className="location">
-                                <p>from: {destionation.from}</p>
-                                <p> to:{destionation.to}</p>
-                            </div>
-                            <Button onClick={() => setToggle(!toggle)} type="submit" variant="primary" > Search </Button>
+                                    </Form.Group>
 
-                        </div>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <Form.Label>Pick to</Form.Label>
+                                        <Form.Control type="text" name="to" onBlur={handleOnBlur} placeholder="to" />
+                                    </Form.Group>
+                                    <Button onClick={handleSearch} type="submit" variant="primary" > Search </Button>
+                                </Form>
+                            </div> :
+                                <div className="form-section" >
+                                    <div className="location-info">
+                                        <p>from: {destionation.from}</p>
+                                        <p> to : {destionation.to}</p>
 
-                }
+                                    </div>
+                                    <div className=" rider-options ">
+                                        <img src={transport.img} alt="" />
+                                        <h5>{transport.name}</h5>
+                                        <h5> id:{transportKey}</h5>
+                                        <h5> ${transport.price}</h5>
+                                    </div>
+                                    <div className=" rider-options ">
+                                        <img src={transport.img} alt="" />
+                                        <h5>{transport.name}</h5>
+                                        <h5> id:{transportKey}</h5>
+                                        <h5> ${transport.price}</h5>
+                                    </div>
+                                    <div className=" rider-options ">
+                                        <img src={transport.img} alt="" />
+                                        <h5>{transport.name}</h5>
+                                        <h5> id:{transportKey}</h5>
+                                        <h5> ${transport.price}</h5>
+                                    </div>
+                                    <Button onClick={handleSearch} type="submit" variant="primary" > Search again </Button>
 
+                                </div>
 
+                        }
 
+                    </div>
+                </Col>
+                <Col lg={6} md={12}>
+                    <div className="map-aria  ">
+                        <GoogleMap></GoogleMap>
 
-
-
-            </div>
-            <div className="map-aria">
-
-                <h1>this is map ari</h1>
-            </div>
+                    </div>
+                </Col>
+            </Row>
         </div >
+
     );
 };
 

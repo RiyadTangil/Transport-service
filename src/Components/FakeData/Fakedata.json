@@ -2,6 +2,7 @@
 [{
     "id": 1,
     "name":"Bike",
+    "riderOption" :[34,34,34,56],
     "email": "mpopov0@census.gov",
     "gender": "Polygender",
     "ip_address": "245.155.13.252",

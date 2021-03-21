@@ -6,43 +6,40 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Destination from './Components/Destination/Destination';
 import Login from './Components/Login/Login';
 
 import { createContext, useState } from 'react';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
-import GoogleMap from './Components/Destination/GoogleMap';
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route  path="/home">
+          <Route path="/home">
             <Home />
           </Route>
+          <PrivetRoute path="/destionation">
+          <Destination></Destination>
+          </PrivetRoute>
           <Route path="/login">
             <Login></Login>
-          </Route>
-        
-          <Route path="/transport/:transportKey">
-          <Destination></Destination>
-          </Route>
-          <PrivetRoute path="/blog">
-        <Home></Home>
-          </PrivetRoute>
+             </Route>
+            <PrivetRoute path="/transport/:transportKey">
+              <Destination></Destination>
+            </PrivetRoute>
         </Switch>
       </Router>
     </UserContext.Provider>
-  
+
   );
 }
 

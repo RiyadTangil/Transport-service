@@ -5,7 +5,7 @@ import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import Header from '../Header/Header';
-import { Navbar } from 'react-bootstrap';
+import {Button } from 'react-bootstrap';
 import './login.css'
 
 if (firebase.apps.length === 0) {
@@ -128,7 +128,7 @@ const Login = () => {
     return (
         <div>
             <Header>
-                <Navbar.Brand className=" text-muted" href="#home">Navbar</Navbar.Brand>
+            <Button variant="outline-info">login</Button>
             </Header>
 
             <div>
@@ -142,7 +142,7 @@ const Login = () => {
                         <br />
                         <input type="text" required onBlur={handleBlur} placeholder="type your Email" name="Email" id="" /><br />
                         <input type="password" required onBlur={handleBlur} name="password" id="" placeholder="type your pass" /><br />
-                        <input type="password" required onBlur={handleBlur} name="confirmPassword" id="" placeholder="confirm password" /><br />
+                        {newUser && <input type="password" required onBlur={handleBlur} name="confirmPassword" id="" placeholder="confirm password" />}<br/>
                         <input type="submit" value="submit" />
                     </form>
 

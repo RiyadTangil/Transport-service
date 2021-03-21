@@ -1,23 +1,49 @@
-.search-aria{
+.map-aria{
+    background-image: url(../../images/Map.png);
+    height: 500px;
+    width: 100%;
+    border: 2px solid red;
 
 }
-.destination-form{
-    margin: 30px 50px;
+.search-aria{
+    width: 80%;
+    padding: 0 20px;
+
 }
-.destination-form input{
-    display: block;
-    margin-top: 30px;
-    padding:5px;
-    border:1px solid gray;
-    border-radius: 5px;
-    width:300px;
+.form-section{
+    width: 80%;
+    background-color: gray;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color:white;
 }
-.location{
-    border: 1px solid red;
-    width: 200px;
+
+
+.location-info{
     padding: 5px 30px;
-    background-color: orangered;
+    margin-top: 20px;
+    background-color: salmon;
     color:white;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0 ;
+}
+
+
+.rider-options{
+background-color:wheat;
+border-radius: 10px;
+display:flex;
+align-items: center;
+justify-content: space-evenly;
+margin: 5px;
+padding:5px
+}
+
+.rider-options h5{
+padding: 5px;
+color:black;
+}
+.rider-options img{
+    height: 20px;
 }
